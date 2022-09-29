@@ -18,12 +18,12 @@
 
         <label for="estado">Estado</label>
         <select onchange="buscarCidade()" name="" id="estado" class="form-control mb-3">
-            <option value="">-- Selecione --</option>
+            <option id="nuloEstado" value="0">--Selecione--</option>
         </select>
 
         <label for="cidade">Cidade</label>
-        <select name="" id="cidade" class="form-control mb-3">
-            <option value="">-- Selecione --</option>
+        <select name="nuloCidade" id="cidade" class="form-control mb-3">
+            <option value="0">--Selecione--</option>
         </select>
     </form>
     <script src="eventos.js"></script>

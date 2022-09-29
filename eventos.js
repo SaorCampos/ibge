@@ -8,6 +8,7 @@ fetch('https://servicodados.ibge.gov.br/api/v1/localidades/regioes')
     });
 
 function buscarEstado(){
+    document.getElementById('estado').innerHTML = `<option id="nuloEstado" value="0">--Selecione--</option>`;
     let regiaoSelecionada = regiao.value;
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${regiaoSelecionada}/estados`)
     .then((resposta) => resposta.json())
@@ -20,8 +21,9 @@ function buscarEstado(){
 }
 
 function buscarCidade(){
+    document.getElementById('cidade').innerHTML = `<option id="nuloCidade" value="0">--Selecione--</option>`;
     let cidadeSelecionada = estado.value;
-    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${cidadeSelecionada}/distritos`)
+    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${cidadeSelecionada}/municipios`)
     .then((resposta) => resposta.json())
     .then((cidade) => {
         cidade.map((cadaCidade) => {
